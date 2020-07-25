@@ -110,14 +110,6 @@ class Fitter(object):
         self.ruwe1 = jruwe['ruwe'][0]
         self.ruwe2 = kruwe['ruwe'][0]
         # Check RUWE for both objects and warn if too high:
-        if self.ruwe1>1.2 or self.ruwe2>1.2:
-            yn = input('''WARNING: RUWE for one or more of your solutions is greater than 1.2. This indicates 
-            that the source might be an unresolved binary or experiencing acceleration 
-            during the observation.  Orbit fit results may not be trustworthy.  Do you 
-            wish to continue?
-            Hit enter to proceed, n to exit: ''')
-            if yn == 'n':
-                return None
 
         # reference epoch:
         self.ref_epoch = j['ref_epoch'][0]
