@@ -621,9 +621,9 @@ def makeplots(input_directory,
     stats_name = input_directory+'/stats'
     write_stats([a_au,e,i_deg,w_temp,O_temp,to,periastron],plot_params_names,stats_name)
 
-    print('Making histograms')
-    output_name = input_directory+"/hists"
-    plot_1d_hist([a_au2,e,i_deg,w_temp,O_deg,to2,periastron],plot_params_names,output_name,'fd',tick_fs = 25,
+    #print('Making histograms')
+    #output_name = input_directory+"/hists"
+    #plot_1d_hist([a_au2,e,i_deg,w_temp,O_deg,to2,periastron],plot_params_names,output_name,'fd',tick_fs = 25,
                      label_fs = 30,label_x_x=0.5, label_x_y = -0.3, plot_style = plot_style, saveas = saveas)
 
     if plot_posteriors == True:
