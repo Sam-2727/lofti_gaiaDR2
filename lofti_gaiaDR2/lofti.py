@@ -250,18 +250,6 @@ def fitorbit(source_id1, source_id2,
             return None
         else:
             print("Yeehaw let's go")
-    if rank == 0:
-        if ruwe[0]>1.2 or ruwe[1]>1.2:
-            print(rank)
-            yn = input('''WARNING: RUWE for one or more of your solutions is greater than 1.2. This indicates 
-            that the source might be an unresolved binary or experiencing acceleration 
-            during the observation.  Orbit fit results may not be trustworthy.  Do you 
-            wish to continue?
-            Hit enter to proceed, n to exit: ''')
-            if yn == 'n':
-                return None
-        else:
-                pass
     else:
         pass
         
