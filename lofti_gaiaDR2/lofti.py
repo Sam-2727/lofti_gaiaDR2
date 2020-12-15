@@ -40,17 +40,17 @@ def prepareconstraints(source_id1, source_id2):
     mas_to_deg = 1./3600000.
     
     # Retrieve astrometric solution from Gaia DR2:
-    job = Gaia.launch_job("SELECT * FROM gaiadr2.gaia_source WHERE source_id = "+str(source_id1))
+    job = Gaia.launch_job("SELECT * FROM gaiaedr3.gaia_source WHERE source_id = "+str(source_id1))
     j = job.get_results()
 
-    job = Gaia.launch_job("SELECT * FROM gaiadr2.gaia_source WHERE source_id = "+str(source_id2))
+    job = Gaia.launch_job("SELECT * FROM gaiaedr3.gaia_source WHERE source_id = "+str(source_id2))
     k = job.get_results()
     
     # Retrieve RUWE for both sources
-    job = Gaia.launch_job("SELECT * FROM gaiadr2.ruwe WHERE source_id = "+str(source_id1))
+    job = Gaia.launch_job("SELECT * FROM gaiaedr3.ruwe WHERE source_id = "+str(source_id1))
     jruwe = job.get_results()
 
-    job = Gaia.launch_job("SELECT * FROM gaiadr2.ruwe WHERE source_id = "+str(source_id2))
+    job = Gaia.launch_job("SELECT * FROM gaiaedr3.ruwe WHERE source_id = "+str(source_id2))
     kruwe = job.get_results()
 
     # Parallaxes:
