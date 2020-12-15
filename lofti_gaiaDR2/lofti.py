@@ -68,12 +68,12 @@ def prepareconstraints(source_id1, source_id2):
 
     # Radial velocity, if both objects have a measurement (rare):
     rv = 'no'
-    if type(k[0]['radial_velocity']) == np.float64 and type(j[0]['radial_velocity']) == np.float64:
+    if type(k[0]['dr2_radial_velocity']) == np.float64 and type(j[0]['dr2_radial_velocity']) == np.float64:
         rv = 'yes'
-        rvaarray = np.random.normal(j[0]['radial_velocity'],j[0]['radial_velocity_error'],10000)
-        rvbarray = np.random.normal(k[0]['radial_velocity'],k[0]['radial_velocity_error'],10000)
+        rvaarray = np.random.normal(j[0]['dr2_radial_velocity'],j[0]['dr2_radial_velocity_error'],10000)
+        rvbarray = np.random.normal(k[0]['dr2_radial_velocity'],k[0]['dr2_radial_velocity_error'],10000)
         #deltarv, deltarverr = np.mean(rvaarray - rvbarray), np.std(rvaarray - rvbarray)
-        deltarv, deltarverr = j[0]['radial_velocity'] - k[0]['radial_velocity'], np.std(rvaarray - rvbarray)
+        deltarv, deltarverr = j[0]['dr2_radial_velocity'] - k[0]['dr2_radial_velocity'], np.std(rvaarray - rvbarray)
     else:
         deltarv, deltarverr = 0., 0.
 
