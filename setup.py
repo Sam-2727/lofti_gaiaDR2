@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='lofti_gaiaEDR3',
+setup(name='lofti_gaiaDR2',
       version='0.0.3',
       description='Orbit fitting with Gaia astrometry',
       url='https://github.com/logan-pearce/lofti_gaiaDR2',
@@ -8,5 +8,5 @@ setup(name='lofti_gaiaEDR3',
       author='Logan Pearce',
       author_email='loganpearce1@email.arizona.edu',
       license='MIT',
-      packages=['lofti_gaiaEDR3'],
+      packages=['lofti_gaiaDR2'],
       zip_safe=False)
