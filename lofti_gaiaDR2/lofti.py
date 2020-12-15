@@ -45,13 +45,6 @@ def prepareconstraints(source_id1, source_id2):
 
     job = Gaia.launch_job("SELECT * FROM gaiaedr3.gaia_source WHERE source_id = "+str(source_id2))
     k = job.get_results()
-    
-    # Retrieve RUWE for both sources
-    job = Gaia.launch_job("SELECT * FROM gaiaedr3.ruwe WHERE source_id = "+str(source_id1))
-    jruwe = job.get_results()
-
-    job = Gaia.launch_job("SELECT * FROM gaiaedr3.ruwe WHERE source_id = "+str(source_id2))
-    kruwe = job.get_results()
 
     # Parallaxes:
     plxa, plxaerr = j[0]['parallax'], j[0]['parallax_error']
@@ -132,7 +125,7 @@ def prepareconstraints(source_id1, source_id2):
     return [deltaRA, deltaRA_err], [deltaDec, deltaDec_err], [pmRA_kms, pmRA_err_kms], \
            [pmDec_kms, pmDec_err_kms], [deltarv, deltarverr], [total_pos_velocity, total_pos_velocity_error], \
            [total_velocity_kms, total_velocity_error_kms], [rho, rhoerr], [pa, paerr], \
-           delta_mag, [d_star,d_star_err], [jruwe['ruwe'],kruwe['ruwe']]
+           delta_mag, [d_star,d_star_err], [j['ruwe'],k['ruwe']]
 
     
 
