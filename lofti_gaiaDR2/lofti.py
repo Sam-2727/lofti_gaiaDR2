@@ -94,17 +94,17 @@ class Fitter(object):
         mas_to_deg = 1./3600000.
         
         # Retrieve astrometric solution from Gaia DR2
-        job = Gaia.launch_job("SELECT * FROM gaiadr2.gaia_source WHERE source_id = "+str(self.sourceid1))
+        job = Gaia.launch_job("SELECT * FROM gaiaedr3.gaia_source WHERE source_id = "+str(self.sourceid1))
         j = job.get_results()
 
-        job = Gaia.launch_job("SELECT * FROM gaiadr2.gaia_source WHERE source_id = "+str(self.sourceid2))
+        job = Gaia.launch_job("SELECT * FROM gaiaedr3.gaia_source WHERE source_id = "+str(self.sourceid2))
         k = job.get_results()
 
         # Retrieve RUWE for both sources and add to object state:
-        job = Gaia.launch_job("SELECT * FROM gaiadr2.ruwe WHERE source_id = "+str(self.sourceid1))
+        job = Gaia.launch_job("SELECT * FROM gaiaedr3.ruwe WHERE source_id = "+str(self.sourceid1))
         jruwe = job.get_results()
 
-        job = Gaia.launch_job("SELECT * FROM gaiadr2.ruwe WHERE source_id = "+str(self.sourceid2))
+        job = Gaia.launch_job("SELECT * FROM gaiaedr3.ruwe WHERE source_id = "+str(self.sourceid2))
         kruwe = job.get_results()
 
         self.ruwe1 = jruwe['ruwe'][0]
